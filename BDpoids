@@ -1,0 +1,104 @@
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+-- -----------------------------------------------------
+-- Schema mydb
+-- -----------------------------------------------------
+-- -----------------------------------------------------
+-- Schema bdpoids
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema bdpoids
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `bdpoids` DEFAULT CHARACTER SET utf8 ;
+USE `bdpoids` ;
+
+-- -----------------------------------------------------
+-- Table `bdpoids`.`recap_hebdo`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `bdpoids`.`recap_hebdo` (
+  `idRecap_hebdo` INT(11) NOT NULL AUTO_INCREMENT,
+  `intitule` VARCHAR(200) NOT NULL,
+  `reussite` TINYINT(4) NOT NULL,
+  `semaine` DATE NOT NULL,
+  PRIMARY KEY (`idRecap_hebdo`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `bdpoids`.`recap_jour`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `bdpoids`.`recap_jour` (
+  `idRecap_jour` INT(11) NOT NULL AUTO_INCREMENT,
+  `objectif` VARCHAR(200) NOT NULL,
+  `reussite` TINYINT(4) NOT NULL,
+  `temps_exercice` TIME NOT NULL,
+  PRIMARY KEY (`idRecap_jour`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `bdpoids`.`liant`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `bdpoids`.`liant` (
+  `idRecap_hebdo` INT(11) NOT NULL,
+  `idRecap_jour` INT(11) NOT NULL,
+  PRIMARY KEY (`idRecap_hebdo`, `idRecap_jour`),
+  INDEX `fk_Recap_hebdo_has_Recap_jour_Recap_jour1_idx` (`idRecap_jour` ASC) ,
+  INDEX `fk_Recap_hebdo_has_Recap_jour_Recap_hebdo_idx` (`idRecap_hebdo` ASC) ,
+  CONSTRAINT `fk_Recap_hebdo_has_Recap_jour_Recap_hebdo`
+    FOREIGN KEY (`idRecap_hebdo`)
+    REFERENCES `bdpoids`.`recap_hebdo` (`idRecap_hebdo`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Recap_hebdo_has_Recap_jour_Recap_jour1`
+    FOREIGN KEY (`idRecap_jour`)
+    REFERENCES `bdpoids`.`recap_jour` (`idRecap_jour`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `bdpoids`.`user`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `bdpoids`.`user` (
+  `idUser` INT(11) NOT NULL AUTO_INCREMENT,
+  `nom` VARCHAR(45) NOT NULL,
+  `prenom` VARCHAR(45) NOT NULL,
+  `mail` VARCHAR(45) NOT NULL,
+  `mdp` VARCHAR(45) NOT NULL,
+  `age` INT(11) NOT NULL,
+  `poids` DECIMAL(10,0) NOT NULL,
+  `taille` DECIMAL(10,0) NOT NULL,
+  `sexe` VARCHAR(10) NOT NULL,
+  `deconnexion` DATETIME NOT NULL,
+  `idRecap_jour` INT(11) NOT NULL,
+  `idRecap_hebdo` INT(11) NOT NULL,
+  PRIMARY KEY (`idUser`),
+  INDEX `fk_User_Recap_jour1_idx` (`idRecap_jour` ASC) ,
+  INDEX `fk_User_Recap_hebdo1_idx` (`idRecap_hebdo` ASC) ,
+  CONSTRAINT `fk_User_Recap_hebdo1`
+    FOREIGN KEY (`idRecap_hebdo`)
+    REFERENCES `bdpoids`.`recap_hebdo` (`idRecap_hebdo`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_User_Recap_jour1`
+    FOREIGN KEY (`idRecap_jour`)
+    REFERENCES `bdpoids`.`recap_jour` (`idRecap_jour`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
