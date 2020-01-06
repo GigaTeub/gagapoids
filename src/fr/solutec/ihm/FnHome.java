@@ -142,7 +142,7 @@ public class FnHome extends javax.swing.JFrame {
 
     private void btValiderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btValiderActionPerformed
                                                   
-       /*String login = txtLogin.getText();
+       String login = txtLogin.getText();
        String mdp = txtMdp.getText();
        
         try {
@@ -150,17 +150,17 @@ public class FnHome extends javax.swing.JFrame {
             if(user!=null){
                  JOptionPane.showMessageDialog(rootPane, "Bonjour " + user.getPrenom() + " " + user.getNom());
                  this.setVisible(false);
-                 
+                 new FnConnected().setVisible(true);
+                 this.setVisible(false);
+                 new FnConnected().setVisible(true);
             }
             else{
                 JOptionPane.showMessageDialog(rootPane, "You shall not pass !");
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(rootPane, e.getMessage());
-        }*/
-       FnConnected FnCo = new FnConnected();
-       FnCo.setVisible(true);
-       this.setVisible(false);
+        }
+       
     
     }//GEN-LAST:event_btValiderActionPerformed
 

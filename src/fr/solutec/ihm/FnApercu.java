@@ -54,6 +54,11 @@ public class FnApercu extends javax.swing.JFrame {
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         BtModifier.setText("Modifier");
+        BtModifier.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtModifierActionPerformed(evt);
+            }
+        });
 
         BtAnnuler.setText("Annuler");
         BtAnnuler.addActionListener(new java.awt.event.ActionListener() {
@@ -127,8 +132,16 @@ public class FnApercu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtAnnulerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtAnnulerActionPerformed
-        // TODO add your handling code here:
+     FnConnected FnCo = new FnConnected();
+     FnCo.setVisible(true);
+     this.setVisible(false);
     }//GEN-LAST:event_BtAnnulerActionPerformed
+
+    private void BtModifierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtModifierActionPerformed
+     FnConnected FnCo = new FnConnected();
+     FnCo.setVisible(true);
+     this.setVisible(false);
+    }//GEN-LAST:event_BtModifierActionPerformed
 
     /**
      * @param args the command line arguments

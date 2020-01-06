@@ -156,11 +156,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Valider"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtValiderActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="BtAnnuler">
       <Properties>
         <Property name="text" type="java.lang.String" value="Annuler"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtAnnulerActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

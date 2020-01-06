@@ -43,7 +43,7 @@ public class FnProfil extends javax.swing.JFrame {
         jTextField5 = new javax.swing.JTextField();
         jTextField6 = new javax.swing.JTextField();
         jTextField7 = new javax.swing.JTextField();
-        BtValider = new javax.swing.JButton();
+        BtModifier = new javax.swing.JButton();
         BtAnnuler = new javax.swing.JButton();
         jTextField8 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
@@ -74,9 +74,19 @@ public class FnProfil extends javax.swing.JFrame {
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("Sexe");
 
-        BtValider.setText("Valider");
+        BtModifier.setText("Modifier");
+        BtModifier.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtModifierActionPerformed(evt);
+            }
+        });
 
         BtAnnuler.setText("Annuler");
+        BtAnnuler.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtAnnulerActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("PROFIL");
 
@@ -98,7 +108,7 @@ public class FnProfil extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(BtValider)
+                        .addComponent(BtModifier)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                         .addComponent(BtAnnuler))
                     .addComponent(jTextField1)
@@ -109,7 +119,7 @@ public class FnProfil extends javax.swing.JFrame {
                     .addComponent(jTextField6)
                     .addComponent(jTextField7)
                     .addComponent(jTextField8))
-                .addContainerGap(79, Short.MAX_VALUE))
+                .addContainerGap(73, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
@@ -153,7 +163,7 @@ public class FnProfil extends javax.swing.JFrame {
                     .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BtValider)
+                    .addComponent(BtModifier)
                     .addComponent(BtAnnuler)))
         );
 
@@ -176,6 +186,18 @@ public class FnProfil extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BtModifierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtModifierActionPerformed
+     FnConnected FnCo = new FnConnected();
+     FnCo.setVisible(true);
+     this.setVisible(false);
+    }//GEN-LAST:event_BtModifierActionPerformed
+
+    private void BtAnnulerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtAnnulerActionPerformed
+     FnConnected FnCo = new FnConnected();
+     FnCo.setVisible(true);
+     this.setVisible(false);
+    }//GEN-LAST:event_BtAnnulerActionPerformed
 
     /**
      * @param args the command line arguments
@@ -214,7 +236,7 @@ public class FnProfil extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtAnnuler;
-    private javax.swing.JButton BtValider;
+    private javax.swing.JButton BtModifier;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel3;

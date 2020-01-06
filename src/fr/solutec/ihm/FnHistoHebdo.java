@@ -50,6 +50,11 @@ public class FnHistoHebdo extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         BtRetour.setText("Retour");
+        BtRetour.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtRetourActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -85,6 +90,12 @@ public class FnHistoHebdo extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BtRetourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtRetourActionPerformed
+     FnConnected FnCo = new FnConnected();
+     FnCo.setVisible(true);
+     this.setVisible(false);
+    }//GEN-LAST:event_BtRetourActionPerformed
 
     /**
      * @param args the command line arguments

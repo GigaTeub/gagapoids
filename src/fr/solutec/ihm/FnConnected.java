@@ -166,11 +166,15 @@ public class FnConnected extends javax.swing.JFrame {
     }//GEN-LAST:event_BtHistoQuotActionPerformed
 
     private void BtCreaObjActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtCreaObjActionPerformed
-        // TODO add your handling code here:
+     FnCreaObj FnCrObj = new FnCreaObj();
+     FnCrObj.setVisible(true);
+     this.setVisible(false);
     }//GEN-LAST:event_BtCreaObjActionPerformed
 
     private void BtAperObjActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtAperObjActionPerformed
-        // TODO add your handling code here:
+     FnApercu FnAper = new FnApercu();
+     FnAper.setVisible(true);
+     this.setVisible(false);
     }//GEN-LAST:event_BtAperObjActionPerformed
 
     /**

@@ -61,7 +61,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="BtValider" min="-2" max="-2" attributes="0"/>
+                          <Component id="BtModifier" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="54" max="32767" attributes="0"/>
                           <Component id="BtAnnuler" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -74,7 +74,7 @@
                       <Component id="jTextField7" alignment="0" max="32767" attributes="0"/>
                       <Component id="jTextField8" alignment="0" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="79" max="32767" attributes="0"/>
+                  <EmptySpace pref="73" max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
@@ -129,7 +129,7 @@
                   </Group>
                   <EmptySpace pref="8" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="BtValider" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="BtModifier" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="BtAnnuler" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -199,15 +199,21 @@
         </Component>
         <Component class="javax.swing.JTextField" name="jTextField7">
         </Component>
-        <Component class="javax.swing.JButton" name="BtValider">
+        <Component class="javax.swing.JButton" name="BtModifier">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Valider"/>
+            <Property name="text" type="java.lang.String" value="Modifier"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtModifierActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="BtAnnuler">
           <Properties>
             <Property name="text" type="java.lang.String" value="Annuler"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtAnnulerActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextField8">
         </Component>

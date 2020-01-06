@@ -58,8 +58,18 @@ public class FnCreaObj extends javax.swing.JFrame {
         jTextField2.setText("Bloquée date of the day");
 
         BtValider.setText("Valider");
+        BtValider.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtValiderActionPerformed(evt);
+            }
+        });
 
         BtAnnuler.setText("Annuler");
+        BtAnnuler.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtAnnulerActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -120,6 +130,18 @@ public class FnCreaObj extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BtValiderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtValiderActionPerformed
+     FnConnected FnCo = new FnConnected();
+     FnCo.setVisible(true);
+     this.setVisible(false);
+    }//GEN-LAST:event_BtValiderActionPerformed
+
+    private void BtAnnulerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtAnnulerActionPerformed
+     FnConnected FnCo = new FnConnected();
+     FnCo.setVisible(true);
+     this.setVisible(false);
+    }//GEN-LAST:event_BtAnnulerActionPerformed
 
     /**
      * @param args the command line arguments
