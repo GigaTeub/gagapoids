@@ -153,8 +153,6 @@ public class FnHome extends javax.swing.JFrame {
                  JOptionPane.showMessageDialog(rootPane, "Bonjour " + user.getPrenom() + " " + user.getNom());
                  this.setVisible(false);
                  new FnConnected().setVisible(true);
-                 this.setVisible(false);
-                 new FnConnected().setVisible(true);
                  u_progr = user;
             }
             else{
@@ -168,8 +166,7 @@ public class FnHome extends javax.swing.JFrame {
     }//GEN-LAST:event_btValiderActionPerformed
 
     private void btInscriptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInscriptionActionPerformed
-       FnInscription FnIns = new FnInscription();
-       FnIns.setVisible(true);
+       new FnInscription().setVisible(true);
        this.setVisible(false);
     }//GEN-LAST:event_btInscriptionActionPerformed
 

@@ -22,7 +22,7 @@ public class UserDao {
         ResultSet rs = requete.executeQuery();
         if(rs.next()){
             u = new User();
-            u.setId(rs.getInt("idPersonne"));
+            u.setId(rs.getInt("idUser"));
             u.setNom(rs.getString("nom"));
             u.setPrenom(rs.getString("prenom"));
             u.setMail(rs.getString("mail"));

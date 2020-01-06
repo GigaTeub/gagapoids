@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 06 jan. 2020 à 10:01
+-- Généré le :  lun. 06 jan. 2020 à 12:51
 -- Version du serveur :  5.7.26
 -- Version de PHP :  7.2.18
 
@@ -86,13 +86,21 @@ CREATE TABLE IF NOT EXISTS `user` (
   `prenom` varchar(45) NOT NULL,
   `mail` varchar(45) NOT NULL,
   `mdp` varchar(45) NOT NULL,
-  `age` int(11) NOT NULL,
-  `poids` decimal(10,0) NOT NULL,
-  `taille` decimal(10,0) NOT NULL,
-  `sexe` varchar(10) NOT NULL,
-  `deconnexion` datetime NOT NULL,
+  `age` int(11) NOT NULL DEFAULT '0',
+  `poids` decimal(10,0) NOT NULL DEFAULT '0',
+  `taille` decimal(10,0) NOT NULL DEFAULT '0',
+  `sexe` varchar(10) NOT NULL DEFAULT 'non',
+  `deconnexion` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`idUser`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `user`
+--
+
+INSERT INTO `user` (`idUser`, `nom`, `prenom`, `mail`, `mdp`, `age`, `poids`, `taille`, `sexe`, `deconnexion`) VALUES
+(1, 'test1', 'test1', 'test1', 'test1', 0, '0', '0', 'non', '2020-01-06 13:50:55'),
+(2, 'test2', 'test2', 'test2', 'test2', 2, '2', '2', 'oui', '2020-01-06 13:50:55');
 
 --
 -- Contraintes pour les tables déchargées
