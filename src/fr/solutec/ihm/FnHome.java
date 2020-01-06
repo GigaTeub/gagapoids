@@ -65,6 +65,11 @@ public class FnHome extends javax.swing.JFrame {
         });
 
         btInscription.setText("S'inscire");
+        btInscription.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btInscriptionActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -137,7 +142,7 @@ public class FnHome extends javax.swing.JFrame {
 
     private void btValiderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btValiderActionPerformed
                                                   
-       String login = txtLogin.getText();
+       /*String login = txtLogin.getText();
        String mdp = txtMdp.getText();
        
         try {
@@ -148,14 +153,22 @@ public class FnHome extends javax.swing.JFrame {
                  
             }
             else{
-                JOptionPane.showMessageDialog(rootPane, "No way");
+                JOptionPane.showMessageDialog(rootPane, "You shall not pass !");
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(rootPane, e.getMessage());
-        }
-       
+        }*/
+       FnConnected FnCo = new FnConnected();
+       FnCo.setVisible(true);
+       this.setVisible(false);
     
     }//GEN-LAST:event_btValiderActionPerformed
+
+    private void btInscriptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInscriptionActionPerformed
+       FnInscription FnIns = new FnInscription();
+       FnIns.setVisible(true);
+       this.setVisible(false);
+    }//GEN-LAST:event_btInscriptionActionPerformed
 
     /**
      * @param args the command line arguments

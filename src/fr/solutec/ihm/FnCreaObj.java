@@ -36,8 +36,8 @@ public class FnCreaObj extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        BtValider = new javax.swing.JButton();
+        BtAnnuler = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -57,9 +57,9 @@ public class FnCreaObj extends javax.swing.JFrame {
 
         jTextField2.setText("Bloquée date of the day");
 
-        jButton1.setText("Valider");
+        BtValider.setText("Valider");
 
-        jButton2.setText("Annuler");
+        BtAnnuler.setText("Annuler");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -85,9 +85,9 @@ public class FnCreaObj extends javax.swing.JFrame {
                 .addContainerGap(34, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(54, 54, 54)
-                .addComponent(jButton1)
+                .addComponent(BtValider)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2)
+                .addComponent(BtAnnuler)
                 .addGap(66, 66, 66))
         );
         layout.setVerticalGroup(
@@ -113,8 +113,8 @@ public class FnCreaObj extends javax.swing.JFrame {
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(BtValider)
+                    .addComponent(BtAnnuler))
                 .addContainerGap(46, Short.MAX_VALUE))
         );
 
@@ -151,14 +151,14 @@ public class FnCreaObj extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FnCreaObj().setVisible(true);
+                new FnCreaObj().setVisible(false);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton BtAnnuler;
+    private javax.swing.JButton BtValider;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
