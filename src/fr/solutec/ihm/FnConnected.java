@@ -142,7 +142,7 @@ public class FnConnected extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {
-        /*lblLastCo = "Derniere connexion le :";*/
+    
     }
     
     
