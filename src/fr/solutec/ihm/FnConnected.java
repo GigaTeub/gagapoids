@@ -28,7 +28,7 @@ public class FnConnected extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        lblLastCo = new javax.swing.JLabel();
         BtHistoHebdo = new javax.swing.JButton();
         BtHistoQuot = new javax.swing.JButton();
         BtAperObj = new javax.swing.JButton();
@@ -41,7 +41,7 @@ public class FnConnected extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Bienvenue à toi ! ");
 
-        jLabel2.setText("Dernière co le ...");
+        lblLastCo.setText("Dernière co le ...");
 
         BtHistoHebdo.setText("Historique Hebdomadaire");
         BtHistoHebdo.addActionListener(new java.awt.event.ActionListener() {
@@ -101,7 +101,7 @@ public class FnConnected extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(BtDeconnexion)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lblLastCo, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(BtHistoHebdo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -131,7 +131,7 @@ public class FnConnected extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel2)
+                        .addComponent(lblLastCo)
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(BtDeconnexion)
@@ -141,6 +141,11 @@ public class FnConnected extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {
+        lblLastCo = "Derniere connexion le :";
+    }
+    
+    
     private void BtHistoHebdoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtHistoHebdoActionPerformed
      FnHistoHebdo FnHistHebd = new FnHistoHebdo();
      FnHistHebd.setVisible(true);
@@ -220,6 +225,6 @@ public class FnConnected extends javax.swing.JFrame {
     private javax.swing.JButton BtHistoQuot;
     private javax.swing.JButton BtProfil;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel lblLastCo;
     // End of variables declaration//GEN-END:variables
 }

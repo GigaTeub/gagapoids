@@ -197,16 +197,16 @@ public class FnInscription extends javax.swing.JFrame {
         String prenom = txtPrenom.getText();
         String login = txtMail.getText();
         String mdp = txtMdp.getText();
-        int age = Integer.parseInt(txtAge.getText());
+        /*int age = Integer.parseInt(txtAge.getText());
         double taille = Double.parseDouble(txtTaille.getText());
         double poids = Double.parseDouble(txtPoids.getText());
-        String sexe = txtSexe.getText();
+        String sexe = txtSexe.getText();*/
         
         User u = new User(nom, prenom, login, mdp);
-        u.setAge(age);
+        /*u.setAge(age);
         u.setTaille(taille);
         u.setPoids(poids);
-        u.setSexe(sexe);
+        u.setSexe(sexe);*/
         try{
             UserDao.inscription(u);
             JOptionPane.showMessageDialog(rootPane, "save succesfull");

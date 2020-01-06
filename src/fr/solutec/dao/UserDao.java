@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class UserDao {
     public static User getByLoginAndPass(String log, String mdp) throws SQLException{
         User u = null;
-        String sql = "SELECT * FROM personne WHERE mail=? AND mdp=?";
+        String sql = "SELECT * FROM user WHERE mail=? AND mdp=?";
         Connection connexion = AccessDB.getConnection();
         PreparedStatement requete = connexion.prepareStatement(sql);
         requete.setString(1, log);
@@ -31,7 +31,7 @@ public class UserDao {
     }
     
     public static void inscription(User personne) throws SQLException{
-        String sql = "INSERT INTO personne (nom, prenom, login, mdp) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO user (nom, prenom, mail, mdp) VALUES (?, ?, ?, ?)";
         Connection connexion = AccessDB.getConnection();
         PreparedStatement requete = connexion.prepareStatement(sql);
         requete.setString(1, personne.getNom());
