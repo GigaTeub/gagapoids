@@ -5,6 +5,8 @@
  */
 package fr.solutec.ihm;
 
+import static fr.solutec.ihm.FnHome.u_progr;
+
 /**
  *
  * @author esic
@@ -27,7 +29,7 @@ public class FnConnected extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        lblBienvenue = new javax.swing.JLabel();
         lblLastCo = new javax.swing.JLabel();
         BtHistoHebdo = new javax.swing.JButton();
         BtHistoQuot = new javax.swing.JButton();
@@ -38,8 +40,8 @@ public class FnConnected extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Bienvenue à toi ! ");
+        lblBienvenue.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblBienvenue.setText("Bienvenue à toi ! ");
 
         lblLastCo.setText("Dernière co le ...");
 
@@ -91,7 +93,7 @@ public class FnConnected extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblBienvenue, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(BtProfil)
                 .addGap(49, 49, 49))
@@ -118,7 +120,7 @@ public class FnConnected extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(8, 8, 8)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
+                    .addComponent(lblBienvenue)
                     .addComponent(BtProfil))
                 .addGap(58, 58, 58)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -142,7 +144,8 @@ public class FnConnected extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {
-    
+        lblBienvenue.setText("Bienvenue " + u_progr.getPrenom() + " les gros bras " + u_progr.getNom());
+        lblLastCo.setText("Dernière connexion le : " + u_progr.getDate_deco());
     }
     
     
@@ -224,7 +227,7 @@ public class FnConnected extends javax.swing.JFrame {
     private javax.swing.JButton BtHistoHebdo;
     private javax.swing.JButton BtHistoQuot;
     private javax.swing.JButton BtProfil;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel lblBienvenue;
     private javax.swing.JLabel lblLastCo;
     // End of variables declaration//GEN-END:variables
 }
