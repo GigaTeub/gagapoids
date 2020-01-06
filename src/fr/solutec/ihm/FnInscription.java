@@ -80,6 +80,12 @@ public class FnInscription extends javax.swing.JFrame {
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("Sexe");
 
+        txtAge.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtAgeActionPerformed(evt);
+            }
+        });
+
         BtValider.setText("Valider");
         BtValider.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -197,16 +203,28 @@ public class FnInscription extends javax.swing.JFrame {
         String prenom = txtPrenom.getText();
         String login = txtMail.getText();
         String mdp = txtMdp.getText();
-        /*int age = Integer.parseInt(txtAge.getText());
-        double taille = Double.parseDouble(txtTaille.getText());
-        double poids = Double.parseDouble(txtPoids.getText());
-        String sexe = txtSexe.getText();*/
-        
         User u = new User(nom, prenom, login, mdp);
-        /*u.setAge(age);
-        u.setTaille(taille);
-        u.setPoids(poids);
-        u.setSexe(sexe);*/
+        
+        String t_age = txtAge.getText();
+        String t_taille = txtTaille.getText();
+        String t_poids = txtPoids.getText();
+        
+        if (!t_age.equals("")){
+            int age = Integer.parseInt(t_age);
+            u.setAge(age);
+        }
+        if (!t_taille.equals("")){
+            double taille = Double.parseDouble(txtTaille.getText());
+            u.setTaille(taille);
+        }
+        if (!t_poids.equals("")){
+            double poids = Double.parseDouble(txtPoids.getText());
+            u.setPoids(poids);
+        }
+        
+        String sexe = txtSexe.getText();
+        u.setSexe(sexe);
+        
         try{
             UserDao.inscription(u);
             JOptionPane.showMessageDialog(rootPane, "save succesfull");
@@ -222,6 +240,10 @@ public class FnInscription extends javax.swing.JFrame {
         FnHo.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_BtAnnulerActionPerformed
+
+    private void txtAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAgeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAgeActionPerformed
 
     /**
      * @param args the command line arguments
