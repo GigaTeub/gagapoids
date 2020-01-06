@@ -21,6 +21,8 @@ public class FnHome extends javax.swing.JFrame {
     public FnHome() {
         initComponents();
     }
+    
+    public static User u_progr;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -153,6 +155,7 @@ public class FnHome extends javax.swing.JFrame {
                  new FnConnected().setVisible(true);
                  this.setVisible(false);
                  new FnConnected().setVisible(true);
+                 u_progr = user;
             }
             else{
                 JOptionPane.showMessageDialog(rootPane, "You shall not pass !");
